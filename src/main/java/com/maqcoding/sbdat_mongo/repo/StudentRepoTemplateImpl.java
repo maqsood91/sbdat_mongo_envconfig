@@ -20,6 +20,7 @@ public class StudentRepoTemplateImpl implements StudentRepoTemplate {
 	public void updateStudent(int id, String city) {
 		// TODO Auto-generated method stub
 		System.out.println("inside updateStudent ");
+		
 		Query query= new Query(Criteria.where("id").is(id));
 		Update update=new Update();
 		update.set("city", city);

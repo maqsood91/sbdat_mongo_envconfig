@@ -24,6 +24,7 @@ public class StudentMongoTemplateController {
 	
 	@GetMapping("/list")
 	public ResponseEntity<?> getAllStudent() {
+		
 		return ResponseEntity.ok(this.studentRepo.findAll());
 		
 	}

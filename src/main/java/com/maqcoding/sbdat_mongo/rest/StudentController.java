@@ -38,6 +38,7 @@ public class StudentController {
 	
 	@PostMapping("/update")
 	public ResponseEntity<?> deleteStudent(@RequestBody Student student) {
+		
 		return ResponseEntity.ok(this.studentRepo.save(student));
 		
 	}

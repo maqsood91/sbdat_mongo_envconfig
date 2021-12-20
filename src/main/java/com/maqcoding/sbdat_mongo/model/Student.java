@@ -15,6 +15,7 @@ public class Student {
         @Id
         private int id;
         private String name;
+        
         private String city;
         private String college;
         

@@ -6,4 +6,5 @@ import com.maqcoding.sbdat_mongo.model.Student;
 
 public interface StudentRepo extends MongoRepository<Student, Integer>,StudentRepoTemplate{
 
+	
 }

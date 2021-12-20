@@ -15,6 +15,7 @@ public class SimpleMongoConfig {
 	
 	@Value("${host}")
 	String host;
+	  
 	
 	@Value("${port}")
 	String port;

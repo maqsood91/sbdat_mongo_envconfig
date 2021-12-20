@@ -8,6 +8,7 @@ public class SbdatMongoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SbdatMongoApplication.class, args);
+	
 	}
 
 }
