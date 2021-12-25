@@ -22,6 +22,7 @@ public class SimpleMongoConfig {
 	
 	@Value("${database}")
 	String database;
+	
 	@Value("${test}")
 	String test;
  
@@ -40,6 +41,6 @@ public class SimpleMongoConfig {
 
     @Bean
     public MongoTemplate mongoTemplate() throws Exception {
-        return new MongoTemplate(mongo(), "test");
+        return new MongoTemplate(mongo(), database);
     }
 }

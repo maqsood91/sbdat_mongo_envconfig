@@ -1,5 +1,7 @@
 package com.maqcoding.sbdat_mongo.rest;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,14 +26,31 @@ public class StudentMongoTemplateController {
 	
 	@GetMapping("/list")
 	public ResponseEntity<?> getAllStudent() {
-		
-		return ResponseEntity.ok(this.studentRepo.findAll());
+		 List<Student> students= this.studentRepo.findAll();
+		 
+		 for(Student student1 : students) {
+			 System.out.println("student--"+student1.getName());
+		 } 
+		 //students.forEach(student -> {});
+		return ResponseEntity.ok( this.studentRepo.findAll());
 		
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getStudent(@PathVariable final int id ) {
 		return ResponseEntity.ok(this.studentRepo.findById(id));
+		
+	}
+	
+	@GetMapping("/query")
+	public void getStudent1( ) {
+		this.studentRepo.getStudentWithMongoTemplateQuery();
+		
+	}
+	
+	@GetMapping("/updquery")
+	public void getStudent2( ) {
+		this.studentRepo.updatestudentWithMongoTemplateQuery();
 		
 	}
 	
